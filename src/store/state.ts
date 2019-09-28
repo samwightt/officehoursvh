@@ -1,3 +1,5 @@
 export default {
-  testing: "Hello"
+  users: [],
+  conversations: [],
+  tags: [],
 }
