@@ -28,5 +28,15 @@ export default {
   },
   sendMessage({ commit }, message: { [key: string]: any }) {
     sendFunction(JSON.stringify(message))
+  },
+  signUpUser({ commit, state, dispatch }, user: {
+    name: string,
+    email: string,
+    school: string
+  }) {
+    if (state.users.length === 0 || !state.users.find(item => item.email === user.email)) {
+      commit('createUser', user, dispatch)
+      dispatch('sendMessage', state)
+    }
   }
 }

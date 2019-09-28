@@ -38,8 +38,10 @@ export default Vue.extend({
   },
   beforeCreate() {
     this.$store.dispatch("establishConnection");
-    this.$store.dispatch("sendMessage", {
-      users: ["Hello there!"]
+    this.$store.dispatch("signUpUser", {
+      name: "Sam Wight",
+      email: "samuelwight@gmail.com",
+      school: "The University of Alabama"
     });
   }
 });
