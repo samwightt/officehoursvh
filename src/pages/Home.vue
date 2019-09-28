@@ -11,7 +11,7 @@
 
       <f7-row class="padding-top-half">
         <f7-col>
-          <f7-button large fill href="/student">Continue as student</f7-button>
+          <f7-button large fill href="/student">{{testing}}</f7-button>
         </f7-col>
       </f7-row>
     </f7-block>
@@ -22,6 +22,11 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "HomePage"
+  name: "HomePage",
+  computed: {
+    testing() {
+      return this.$store.state.testing;
+    }
+  }
 });
 </script>
